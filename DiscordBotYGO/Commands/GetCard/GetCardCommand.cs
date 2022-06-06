@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using DiscordBotYGO.Api.Requests;
 using DiscordBotYGO.Commands.GetCard;
 using DiscordBotYGO.Data;
 using DiscordBotYGO.Model;

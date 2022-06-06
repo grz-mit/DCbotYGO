@@ -1,4 +1,5 @@
-﻿using DiscordBotYGO.Commands.GetCard;
+﻿using DiscordBotYGO.Api;
+using DiscordBotYGO.Commands.GetCard;
 using DiscordBotYGO.Data;
 using DiscordBotYGO.Model;
 using DiscordBotYGO.Services;
@@ -11,7 +12,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DiscordBotYGO.Api.Requests
+namespace DiscordBotYGO.Commands.GetCard
 {
     public class CardRequest
     {

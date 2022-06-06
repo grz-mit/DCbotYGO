@@ -1,5 +1,4 @@
 ﻿using DiscordBotYGO.Api;
-using DiscordBotYGO.Api.Requests;
 using DiscordBotYGO.Commands;
 using DiscordBotYGO.Commands.GetCard;
 using DiscordBotYGO.Data;
