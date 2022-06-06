@@ -18,7 +18,7 @@ namespace DiscordBotYGO
 
             Console.WriteLine("Pass Token:");
 
-            using (StreamWriter w = new StreamWriter(Environment.CurrentDirectory + "\\Config\\config.json"))
+            using (StreamWriter w = new StreamWriter(Helper.Paths.ConfigFile))
             {
                 var serializer = new JsonSerializer();
 
@@ -34,7 +34,7 @@ namespace DiscordBotYGO
 
             Console.WriteLine("Pass connection string to DB:");
 
-            using (StreamWriter w = new StreamWriter(Environment.CurrentDirectory + "\\Config\\config.json"))
+            using (StreamWriter w = new StreamWriter(Helper.Paths.ConfigFile))
             {
                 var serializer = new JsonSerializer();
 
@@ -50,7 +50,7 @@ namespace DiscordBotYGO
 
             Console.WriteLine("Pass GuildId:");
 
-            using (StreamWriter w = new StreamWriter(Environment.CurrentDirectory + "\\Config\\config.json"))
+            using (StreamWriter w = new StreamWriter(Helper.Paths.ConfigFile))
             {
                 var serializer = new JsonSerializer();
 
@@ -66,7 +66,7 @@ namespace DiscordBotYGO
         {
             if (configModel == null)
             {
-                using (StreamReader r = new StreamReader(Environment.CurrentDirectory + "\\Config\\config.json"))
+                using (StreamReader r = new StreamReader(Helper.Paths.ConfigFile))
                 {
                     string configJson = r.ReadToEnd();
 

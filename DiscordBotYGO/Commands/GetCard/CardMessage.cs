@@ -20,7 +20,7 @@ namespace DiscordBotYGO.Commands.GetCard
 
         public async void CreateCardMessage (InteractionContext ctx, DiscordEmbed concreteCardEmbed, string cardId)
         {
-            var path = Environment.CurrentDirectory + "\\CardImages\\";
+            var path = Helper.Paths.ImageDirectory;
             
             using (var fs = new FileStream(path + cardId + ".jpg", FileMode.Open))
             {

@@ -20,11 +20,7 @@ namespace DiscordBotYGO
         {
             do
             {
-                Console.WriteLine("Press specific button to choose option:\n" +
-                    "1 - Run bot\n" +
-                    "2 - Add Token\n" +
-                    "3 - Add Guild ID\n"+
-                    "4 - Add Connection String to DB");
+                Console.WriteLine(Helper.Messages.Menu);
 
                 var pressedKey = Console.ReadKey(true);
                 

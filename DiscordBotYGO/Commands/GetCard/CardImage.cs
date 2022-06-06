@@ -13,7 +13,7 @@ namespace DiscordBotYGO.Commands.GetCard
     {
         public static void Download (CardModel cardModel)
         {
-            var path = Environment.CurrentDirectory + "\\CardImages\\";
+            var path = Helper.Paths.ImageDirectory;
 
             if (!File.Exists(path + cardModel.Id + ".jpg"))
             {

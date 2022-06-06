@@ -48,7 +48,7 @@ namespace DiscordBotYGO.Commands
 
                 if (cardFromRequest == null)
                 {
-                    await ctx.CreateResponseAsync("Card not found");
+                    await ctx.CreateResponseAsync(Helper.Messages.CardNotFound(name));
                 }
                 else
                 {
