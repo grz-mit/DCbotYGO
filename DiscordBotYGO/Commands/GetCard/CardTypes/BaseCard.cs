@@ -15,6 +15,15 @@ namespace DiscordBotYGO.Commands.GetCard
         public string Race { get; set; }
         public string Thumbnail { get; set; }
 
-        public abstract DiscordEmbed GetCardEmbed(DiscordEmbedBuilder embed);
+        public virtual DiscordEmbedBuilder GetCardEmbed(DiscordEmbedBuilder embed)
+        {
+            embed.AddField("Name", $"{Name}", false);
+            embed.AddField("Race", $"{Race}", false);
+            embed.AddField("Type", $"{Type}", false);
+            embed.AddField("Description", $"{Desc}", false);
+            embed.WithThumbnail($"attachment://{Thumbnail}.jpg");
+
+            return embed;
+        }
     }
 }

@@ -9,16 +9,12 @@ namespace DiscordBotYGO.Commands.GetCard.CardTypes
 {
     public class TrapCard : BaseCard
     {
-        public override DiscordEmbed GetCardEmbed(DiscordEmbedBuilder embed)
+        public override DiscordEmbedBuilder GetCardEmbed(DiscordEmbedBuilder embed)
         {
-            embed.AddField("Name", $"{Name}", false);
-            embed.AddField("Race", $"{Race}", false);
-            embed.AddField("Type", $"{Type}", false);
-            embed.AddField("Description", $"{Desc}", false);
-            embed.WithThumbnail($"attachment://{Thumbnail}.jpg");
+            embed = base.GetCardEmbed(embed);
             embed.WithColor(new DiscordColor("#930c6e"));
 
-            return embed.Build();
+            return embed;
         }
     }
 }

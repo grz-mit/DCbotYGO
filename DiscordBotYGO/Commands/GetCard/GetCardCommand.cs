@@ -55,14 +55,14 @@ namespace DiscordBotYGO.Commands
                     await _cardRepository.AddCard(cardFromRequest);
                     
                     CardImage.Download(cardFromRequest);                
-                    var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromRequest).GetCardEmbed(_discordEmbedBuilder);
+                    var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromRequest).GetCardEmbed(_discordEmbedBuilder).Build();
                     _cardMessage.CreateCardMessage(ctx, concreteCardEmbed, cardFromRequest.Id);
                 }
             }
             else
             {
                 CardImage.Download(cardFromDb);             
-                var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromDb).GetCardEmbed(_discordEmbedBuilder);        
+                var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromDb).GetCardEmbed(_discordEmbedBuilder).Build();        
                 _cardMessage.CreateCardMessage(ctx, concreteCardEmbed, cardFromDb.Id);             
             }
 
