@@ -39,7 +39,7 @@ namespace DiscordBotYGO
                         break;
 
                     case ConsoleKey.D3:
-                        _config.AddGuidId();
+                        _config.AddGuildId();
                         break;
 
                     case ConsoleKey.D4:

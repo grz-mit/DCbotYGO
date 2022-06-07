@@ -44,7 +44,7 @@ namespace DiscordBotYGO
             Console.Clear();
         }
 
-        public void AddGuidId()
+        public void AddGuildId()
         {
             configModel = GetConfig();
 

@@ -19,7 +19,8 @@ namespace DiscordBotYGO
 {
     public class Bot
     {
-        private readonly ConfigModel _configModel;     
+        private readonly ConfigModel _configModel;   
+        
         public Bot(ConfigModel configModel)
         {
             _configModel = configModel;
@@ -49,12 +50,12 @@ namespace DiscordBotYGO
                 TokenType = TokenType.Bot
             });
 
-            var SlashCommands = discordClient.UseSlashCommands(new SlashCommandsConfiguration()
+            var slashCommands = discordClient.UseSlashCommands(new SlashCommandsConfiguration()
             {
                 Services = servicesCollection.BuildServiceProvider()
             });
 
-            SlashCommands.RegisterCommands<GetCardCommand>(_configModel.GuildId);
+            slashCommands.RegisterCommands<GetCardCommand>(_configModel.GuildId);
 
             await discordClient.ConnectAsync();
             await Task.Delay(-1);
