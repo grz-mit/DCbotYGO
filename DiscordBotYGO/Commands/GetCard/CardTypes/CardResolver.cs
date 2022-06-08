@@ -20,10 +20,10 @@ namespace DiscordBotYGO.Commands.GetCard
 
         private Dictionary<string, BaseCard> GetCardTypesDict()
         {
-            
             return new Dictionary<string, BaseCard>
             {
                 {"Normal Monster", new NormalMonsterCard()},
+                {"Effect Monster", new EffectMonsterCard()},
                 {"Spell Card", new SpellCard()},
                 {"Trap Card", new TrapCard()}
             };

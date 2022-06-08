@@ -12,7 +12,7 @@ namespace DiscordBotYGO.Commands.GetCard
         public override DiscordEmbedBuilder GetCardEmbed(DiscordEmbedBuilder embed)
         {
             embed = base.GetCardEmbed(embed);
-            embed.WithColor(new DiscordColor("#3a831b"));
+            embed.WithColor(new DiscordColor("#43c48e"));
 
             return embed;
         }
