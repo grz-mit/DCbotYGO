@@ -1,5 +1,4 @@
-﻿using DiscordBotYGO.Api;
-using DiscordBotYGO.Commands.GetCard;
+﻿using DiscordBotYGO.Commands.GetCard;
 using DiscordBotYGO.Data;
 using DiscordBotYGO.Model;
 using DiscordBotYGO.Services;
@@ -22,7 +21,7 @@ namespace DiscordBotYGO.Commands.GetCard
         {
             var url = $"cardinfo.php?name={Uri.EscapeUriString(name)}";
 
-            using (var response = await ApiHelper.ApiClient.GetAsync(url))
+            using (var response = await Helper.Api.ApiClient.GetAsync(url))
             {
                 var content = await response.Content.ReadAsStringAsync();
                 var dataModel = JsonConvert.DeserializeObject<DataModel>(content);

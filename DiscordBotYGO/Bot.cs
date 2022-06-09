@@ -1,5 +1,4 @@
-﻿using DiscordBotYGO.Api;
-using DiscordBotYGO.Commands;
+﻿using DiscordBotYGO.Commands;
 using DiscordBotYGO.Commands.GetCard;
 using DiscordBotYGO.Data;
 using DiscordBotYGO.Services;
@@ -28,7 +27,7 @@ namespace DiscordBotYGO
 
         public async Task Run()
         {
-            ApiHelper.InitializeClient();
+            Helper.Api.InitializeClient();
 
             var servicesCollection = new ServiceCollection();
 
