@@ -18,6 +18,7 @@ namespace DiscordBotYGO
             CreateMap<CardModel, SpellCard>().ForMember(n => n.Thumbnail, map => map.MapFrom(c => c.Id));
             CreateMap<CardModel, TrapCard>().ForMember(n => n.Thumbnail, map => map.MapFrom(c => c.Id));
             CreateMap<CardModel, EffectMonsterCard>().ForMember(n => n.Thumbnail, map => map.MapFrom(c => c.Id));
+            CreateMap<CardModel, XYZMonsterCard>().ForMember(n => n.Thumbnail, map => map.MapFrom(c => c.Id));
         }
     }
 }

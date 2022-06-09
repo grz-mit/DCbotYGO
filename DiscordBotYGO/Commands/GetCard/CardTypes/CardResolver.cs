@@ -24,6 +24,7 @@ namespace DiscordBotYGO.Commands.GetCard
             {
                 {"Normal Monster", new NormalMonsterCard()},
                 {"Effect Monster", new EffectMonsterCard()},
+                {"XYZ Monster", new XYZMonsterCard()},
                 {"Spell Card", new SpellCard()},
                 {"Trap Card", new TrapCard()}
             };
