@@ -12,6 +12,11 @@ namespace DiscordBotYGO
     {
         private ConfigModel configModel;
 
+        public Config()
+        {
+            CreateConfigJson();
+        }
+
         public void AddToken()
         {
             configModel = GetConfig();
@@ -71,12 +76,26 @@ namespace DiscordBotYGO
                     string configJson = r.ReadToEnd();
 
                     configModel = JsonConvert.DeserializeObject<ConfigModel>(configJson);
+
+                    if (configModel == null)
+                    {
+                        configModel = new ConfigModel();
+                    }
+
                     return configModel;
                 }
             }
             else
             {
                 return configModel;
+            }
+        }
+
+        private void CreateConfigJson()
+        {
+            if (!File.Exists(Helper.Paths.ConfigFile))
+            {
+                using (File.Create(Helper.Paths.ConfigFile)) { }
             }
         }
     }
