@@ -25,7 +25,6 @@ namespace DiscordBotYGO.Commands
         private readonly CardResolver _cardResolver;
         private readonly DiscordEmbedBuilder _discordEmbedBuilder;
 
-
         public GetCardCommand(CardRequest cardRequest, ICardRepository cardRepository, CardResolver cardResolver,
                                          DiscordEmbedBuilder discordEmbedBuilder, CardMessage cardMessage)
         {
@@ -54,18 +53,20 @@ namespace DiscordBotYGO.Commands
                 {
                     await _cardRepository.AddCard(cardFromRequest);
                     
-                    CardImage.Download(cardFromRequest);                
-                    var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromRequest).GetCardEmbed(_discordEmbedBuilder).Build();
-                    _cardMessage.CreateCardMessage(ctx, concreteCardEmbed, cardFromRequest.Id);
+                    SendMessage(ctx, cardFromRequest); 
                 }
             }
             else
             {
-                CardImage.Download(cardFromDb);             
-                var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardFromDb).GetCardEmbed(_discordEmbedBuilder).Build();        
-                _cardMessage.CreateCardMessage(ctx, concreteCardEmbed, cardFromDb.Id);             
+                SendMessage(ctx, cardFromDb);         
             }
+        }
 
+        private void SendMessage(InteractionContext ctx, CardModel cardModel)
+        {
+            CardImage.Download(cardModel);
+            var concreteCardEmbed = _cardResolver.MapToConcreteCardType(cardModel).GetCardEmbed(_discordEmbedBuilder).Build();
+            _cardMessage.CreateCardMessage(ctx, concreteCardEmbed, cardModel.Id);
         }
     }
 }

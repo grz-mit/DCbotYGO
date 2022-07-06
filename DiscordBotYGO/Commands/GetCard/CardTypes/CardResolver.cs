@@ -24,9 +24,22 @@ namespace DiscordBotYGO.Commands.GetCard
             {
                 {"Normal Monster", new NormalMonsterCard()},
                 {"Effect Monster", new EffectMonsterCard()},
+                {"Flip Effect Monster", new EffectMonsterCard()},
+                {"Union Effect Monster", new EffectMonsterCard()},
+                {"Union Monster", new EffectMonsterCard()},
+                {"Spirit Effect Monster", new EffectMonsterCard()},
+                {"Spirit Monster", new EffectMonsterCard()},
+                {"Gemini Effect Monster", new EffectMonsterCard()},
+                {"Gemini Monster", new EffectMonsterCard()},
+                {"Tuner Effect Monster", new EffectMonsterCard()},
+                {"Tuner Monster", new EffectMonsterCard()},
                 {"XYZ Monster", new XYZMonsterCard()},
+                {"Link Monster", new LinkMonsterCard()},
+                {"Fusion Monster", new FusionMonsterCard()},
+                {"Synchro Monster", new SynchroMonsterCard()},
                 {"Spell Card", new SpellCard()},
-                {"Trap Card", new TrapCard()}
+                {"Trap Card", new TrapCard()},
+                {"Token", new TokenCard()}
             };
         }
 
